@@ -5,13 +5,10 @@
 .title {
   background-color: pink;
   text-align: center;
-  padding-bottom: 5px;
 }
 .subtitle {
   background-color: skyblue;
   text-align: center;
-  padding-bottom: 3px;
-  margin-bottom: 20px;
 }
 
 .menu {
@@ -25,7 +22,7 @@
   align-items: center;
   text-align: center;
   margin: 20px;
-  border: 2px solid;
+  border: 2px solid black;
   padding: 50px;
   border-radius: 50px;
 }
