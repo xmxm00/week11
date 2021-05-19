@@ -1,0 +1,62 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.title {
+  background-color: pink;
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 35pt;
+  font-weight: 1000;
+}
+.subtitle {
+  background-color: skyblue;
+  text-align: center;
+  padding-top:5pt;
+  padding-bottom: 5px;
+  margin-bottom: 50px;
+  font-size:15pt;
+  font-weight: 500;
+}
+
+.menu {
+  margin: 50px;
+  align-items: center;
+}
+
+.button {
+  width: 180px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  border: 2px solid;
+  padding: 50px;
+  border-radius: 50px;
+}
+.card {
+  width:300px;
+  margin:10px;
+}
+.table {
+  border: 1px black solid;
+}
+
+.write {
+  margin-right: 100px;
+}
+
+.card-body {
+  text-align: center;
+  font-size: 25px;
+}
+.submit {
+  width: 200px;
+}
+img {
+  height:150px;
+  overflow: hidden;
+}
+h3 {
+  margin-left: 30px;
+}
+
