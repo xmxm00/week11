@@ -2,14 +2,14 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 .title {
-  background-color: pink;
+  background-color: #FFC0CB;
   text-align: center;
   padding-bottom: 5px;
   font-size: 35pt;
   font-weight: 1000;
 }
 .subtitle {
-  background-color: skyblue;
+  background-color: #D2F3F8;
   text-align: center;
   padding-top:5pt;
   padding-bottom: 5px;
@@ -59,4 +59,17 @@ img {
 h3 {
   margin-left: 30px;
 }
-
+#total {
+  padding:4pt 10pt;
+  margin-bottom:5px;
+}
+#myeong {
+  padding:4pt 10pt;
+  background-color: #FFC0CB;
+  margin-bottom:5px;
+}
+#yul {
+  padding:4pt 10pt;
+  background-color: #D2F3F8;
+  margin-bottom:5px;
+}
