@@ -362,6 +362,8 @@
 
     <!-- 글쓰기 -->
     <form class="row g-3 needs-validation collapse" id="writing" novalidate>
+      <div class="col-12 m-4"></div>
+      <div class="col-md-1"></div>
       <div class="col-md-3">
         <label for="ordered_store" class="form-label">주문 가게</label>
         <select
@@ -395,7 +397,7 @@
           본인이 배달을 주문할 시간을 입력하세요.
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <label for="ordered_money" class="form-label"
           >주문 가격 (숫자만 입력하세요)</label
         >
@@ -412,7 +414,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
         <label for="ordered_location" class="form-label">주문 장소</label>
         <select class="form-select" id="ordered_location" required>
           <option selected disabled value="">선택</option>
@@ -441,7 +445,27 @@
           />
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <label for="phoneNumber" class="form-label"
+          >전화번호</label
+        >
+        <div class="input-group has-validation">
+          <input
+            type="number"
+            class="form-control"
+            id="phoneNumber"
+            aria-describedby="inputGroupPrepend"
+            placeholder="01012345678"
+            required
+          />
+          <div class="invalid-feedback">
+            하이픈(-)을 제외한 숫자만 입력해주세요!
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 align-self-center">
         <div class="form-check">
           <input
             class="form-check-input"
@@ -451,12 +475,14 @@
             required
           />
           <label class="form-check-label" for="invalidCheck">
-            개인정보 공유 동의 (필수)
+            개인정보 공유 동의 <strong>(필수)</strong>
           </label>
           <div class="invalid-feedback">동의란에 체크하셔야 합니다.</div>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-11">
         <button
           class="btn btn-primary position-absolute start-25 submit"
           type="submit"
@@ -519,6 +545,7 @@
         select.textContent = "선택";
         select.addEventListener("click", () => {
           tr.remove();
+          alert("상대방의 번호는 " + save.phoneNum + "입니다.");
           saves = saves.filter((t) => t !== save);
           savedata(saves);
         });
@@ -626,6 +653,7 @@
                   let time = document.querySelector("#ordered_time");
                   let money = document.querySelector("#ordered_money");
                   let location = document.querySelector("#ordered_location");
+                  let phone = document.querySelector("#phoneNumber");
                   let presentTime = new Date();
                   presentTime =
                     presentTime.getHours() * 60 + presentTime.getMinutes();
@@ -637,6 +665,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "BBQ") {
@@ -646,6 +675,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "엽기떡볶이") {
@@ -655,6 +685,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "마라탕") {
@@ -664,6 +695,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "도미노피자") {
@@ -673,6 +705,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "짜장면") {
@@ -682,6 +715,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "김치찌개") {
@@ -691,6 +725,7 @@
                       money: money.value,
                       location: location.value,
                       submitTime: presentTime,
+                      phoneNum: phone.value,
                     };
                   }
                   if (store.value === "기타") {
@@ -706,6 +741,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       name: name.value,
+                      phoneNum: phone.value,
                     };
                   }
                   saves.push(save);
@@ -715,6 +751,8 @@
                   time.value = "";
                   money.value = "";
                   location.value = "";
+                  phone.value = "";
+                  alert('정상적으로 등록되었습니다!');
                 }
               },
               false
