@@ -128,13 +128,14 @@
           role="button"
           aria-expanded="false"
           aria-controls="etc"
-          style="margin-left: 83%; margin-right: 10px"
         >
+          <!-- style="margin-left: 83%; margin-right: 10px" -->
           <img src="etc.png" class="card-img-top p-2" />
           <div class="card-body">기타</div>
         </div>
       </div>
     </div>
+    <p></p>
     <button
       type="button"
       class="btn btn-success write position-absolute end-0"
@@ -363,7 +364,12 @@
     <form class="row g-3 needs-validation collapse" id="writing" novalidate>
       <div class="col-md-3">
         <label for="ordered_store" class="form-label">주문 가게</label>
-        <select class="form-select" id="ordered_store" required>
+        <select
+          class="form-select"
+          id="ordered_store"
+          onchange="selectStore()"
+          required
+        >
           <option selected disabled value="">선택</option>
           <option>써브웨이</option>
           <option>BBQ</option>
@@ -423,14 +429,14 @@
       </div>
       <div class="col-md-7">
         <label for="validationCustomUsername" class="form-label"
-          >주문 가게가 기타일 때 (선택)</label
+          >비고</label
         >
         <div class="input-group">
           <input
             type="text"
             class="form-control"
             id="etc_write"
-            placeholder="가게이름을 입력하세요."
+            placeholder="하고 싶은 말을 적어주세요!"
             aria-describedby="inputGroupPrepend"
           />
         </div>
@@ -882,6 +888,43 @@
         document.querySelector("#etc_tbody").innerHTML = "";
         eyul.forEach(addContent);
       });
+      function selectStore() {
+        let autoPlaceholder = document.querySelector("#ordered_store");
+        switch (autoPlaceholder.value) {
+          case "써브웨이":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Subway;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "BBQ":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.BBQ;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "엽기떡볶이":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Yeopddeok;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "마라탕":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Maratang;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "도미노피자":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Domino;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "짜장면":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Jajangmyeon;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "김치찌개":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Kimchi;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "기타":
+            document.querySelector("#ordered_money").placeholder = "금액";
+            document.querySelector("#etc_write").placeholder = "주문하고자 하는 가게 명을 적어주세요!";
+            break;
+        }
+      }
     </script>
   </body>
 </html>
