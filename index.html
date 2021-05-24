@@ -67,10 +67,10 @@
           href="#yeopddeok"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="yeopddeok"
         >
           <img src="yeopddeok.png" class="card-img-top p-3" />
-          <div class="card-body">동대문엽기떡볶이</div>
+          <div class="card-body">엽기떡볶이</div>
         </div>
         <div
           type="button"
@@ -79,7 +79,7 @@
           href="#maratang"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="maratang"
         >
           <img src="maratang.png" class="card-img-top p-2" />
           <div class="card-body">마라탕</div>
@@ -91,9 +91,9 @@
           href="#domino"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="domino"
         >
-          <img src="domino.png" class="card-img-top" />
+          <img src="domino.png" class="card-img-top p-4" />
           <div class="card-body">도미노피자</div>
         </div>
         <div
@@ -103,7 +103,7 @@
           href="#jajangmyeon"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="jajangmyeon"
         >
           <img src="jajangmyeon.jpg" class="card-img-top p-2" />
           <div class="card-body">짜장면</div>
@@ -115,7 +115,7 @@
           href="#kimchi"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="kimchi"
         >
           <img src="kimchi.jpg" class="card-img-top" />
           <div class="card-body">김치찌개</div>
@@ -127,46 +127,44 @@
           href="#etc"
           role="button"
           aria-expanded="false"
-          aria-controls="bbq"
+          aria-controls="etc"
         >
+          <!-- style="margin-left: 83%; margin-right: 10px" -->
           <img src="etc.png" class="card-img-top p-2" />
           <div class="card-body">기타</div>
         </div>
       </div>
     </div>
-    <br>
-    <div class="container">
-      <button
+    <p></p>
+    <button
       type="button"
-      class="btn btn-success write"
+      class="btn btn-success write position-absolute end-0"
       data-bs-toggle="collapse"
       href="#writing"
       role="button"
       aria-expanded="false"
       aria-controls="writing"
-      style="margin-left:83%; margin-right:10px;"
     >
       글쓰기 <i class="bi bi-pencil"></i>
     </button>
-    <button type="button" class="btn btn-light" style="margin-left:0;">
+    <button type="button" class="btn btn-light position-absolute end-0">
       내 글 <i class="bi bi-card-text"></i>
     </button>
-    </div> 
 
     <!-- 게시글 -->
-    <br>
-    <br>
-    <br>
-    <div class="container">
     <div class="collapse" id="subway">
       <div>
-        <h3>써브웨이 (최소주문금액: 11000원)</h3>
+        <h3>써브웨이(최소주문금액: 11000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong"  >명륜</button>
-      <button type="button" class="btn btn-light select" id="yul"  >율전</button>
+      <button type="button" class="btn btn-light select" id="stotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="smyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="syul">율전</button>
 
-      <table class="table table-hover">
+      <table class="table table-borderless">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -182,11 +180,15 @@
 
     <div class="collapse" id="bbq">
       <div>
-        <h3>BBQ (최소주문금액: 18000원)</h3>
+        <h3>BBQ(최소주문금액: 18000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="btotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="bmyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="byul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -204,11 +206,15 @@
 
     <div class="collapse" id="yeopddeok">
       <div>
-        <h3>엽기떡볶이 (최소주문금액: 13000원)</h3>
+        <h3>엽기떡볶이(최소주문금액: 13000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="ytotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="ymyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="yyul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -226,11 +232,15 @@
 
     <div class="collapse" id="maratang">
       <div>
-        <h3>마라탕 (최소주문금액: 10000원)</h3>
+        <h3>마라탕(최소주문금액: 10000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="mtotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="mmyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="myul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -248,11 +258,15 @@
 
     <div class="collapse" id="domino">
       <div>
-        <h3>도미노피자 (최소주문금액: 16000원)</h3>
+        <h3>도미노피자(최소주문금액: 16000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="dtotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="dmyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="dyul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -270,11 +284,15 @@
 
     <div class="collapse" id="jajangmyeon">
       <div>
-        <h3>짜장면 (최소주문금액: 6000원)</h3>
+        <h3>짜장면(최소주문금액: 6000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="jtotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="jmyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="jyul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -292,11 +310,15 @@
 
     <div class="collapse" id="kimchi">
       <div>
-        <h3>김치찌개 (최소주문금액: 10000원)</h3>
+        <h3>김치찌개(최소주문금액: 10000원)</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="ktotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="kmyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="kyul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -316,9 +338,13 @@
       <div>
         <h3>기타</h3>
       </div>
-      <button type="button" class="btn btn-light select" id="total">전체</button>
-      <button type="button" class="btn btn-light select" id="myeong">명륜</button>
-      <button type="button" class="btn btn-light select" id="yul">율전</button>
+      <button type="button" class="btn btn-light select" id="etotal">
+        전체
+      </button>
+      <button type="button" class="btn btn-light select" id="emyeong">
+        명륜
+      </button>
+      <button type="button" class="btn btn-light select" id="eyul">율전</button>
 
       <table class="table table-borderless">
         <thead>
@@ -333,16 +359,19 @@
         <tbody id="etc_tbody"></tbody>
       </table>
     </div>
-  </div>
 
     <!-- 글쓰기 -->
-    <div class="container">
     <form class="row g-3 needs-validation collapse" id="writing" novalidate>
       <div class="col-12 m-4"></div>
       <div class="col-md-1"></div>
       <div class="col-md-3">
         <label for="ordered_store" class="form-label">주문 가게</label>
-        <select class="form-select" id="ordered_store" required>
+        <select
+          class="form-select"
+          id="ordered_store"
+          onchange="selectStore()"
+          required
+        >
           <option selected disabled value="">선택</option>
           <option>써브웨이</option>
           <option>BBQ</option>
@@ -404,14 +433,14 @@
       </div>
       <div class="col-md-7">
         <label for="validationCustomUsername" class="form-label"
-          >주문 가게가 기타일 때 (선택)</label
+          >비고</label
         >
         <div class="input-group">
           <input
             type="text"
             class="form-control"
             id="etc_write"
-            placeholder="가게이름을 입력하세요."
+            placeholder="하고 싶은 말을 적어주세요!"
             aria-describedby="inputGroupPrepend"
           />
         </div>
@@ -463,7 +492,6 @@
         </button>
       </div>
     </form>
-  </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
