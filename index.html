@@ -338,6 +338,8 @@
     <!-- 글쓰기 -->
     <div class="container">
     <form class="row g-3 needs-validation collapse" id="writing" novalidate>
+      <div class="col-12 m-4"></div>
+      <div class="col-md-1"></div>
       <div class="col-md-3">
         <label for="ordered_store" class="form-label">주문 가게</label>
         <select class="form-select" id="ordered_store" required>
@@ -366,7 +368,7 @@
           본인이 배달을 주문할 시간을 입력하세요.
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <label for="ordered_money" class="form-label"
           >주문 가격 (숫자만 입력하세요)</label
         >
@@ -383,7 +385,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
         <label for="ordered_location" class="form-label">주문 장소</label>
         <select class="form-select" id="ordered_location" required>
           <option selected disabled value="">선택</option>
@@ -412,7 +416,27 @@
           />
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <label for="phoneNumber" class="form-label"
+          >전화번호</label
+        >
+        <div class="input-group has-validation">
+          <input
+            type="number"
+            class="form-control"
+            id="phoneNumber"
+            aria-describedby="inputGroupPrepend"
+            placeholder="01012345678"
+            required
+          />
+          <div class="invalid-feedback">
+            하이픈(-)을 제외한 숫자만 입력해주세요!
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 align-self-center">
         <div class="form-check">
           <input
             class="form-check-input"
@@ -422,12 +446,14 @@
             required
           />
           <label class="form-check-label" for="invalidCheck">
-            개인정보 공유 동의 (필수)
+            개인정보 공유 동의 <strong>(필수)</strong>
           </label>
           <div class="invalid-feedback">동의란에 체크하셔야 합니다.</div>
         </div>
       </div>
-      <div class="col-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-1"></div>
+      <div class="col-11">
         <button
           class="btn btn-primary position-absolute start-25 submit"
           type="submit"
@@ -446,7 +472,473 @@
     ></script>
 
     <script>
+<<<<<<< HEAD
       
+=======
+      //script
+      const type = {
+        Subway: 0,
+        BBQ: 1,
+        Yeopddeok: 2,
+        Maratang: 3,
+        Domino: 4,
+        Jajangmyeon: 5,
+        Kimchi: 6,
+        Etc: 7,
+      };
+      let saves = [];
+      window.addEventListener("load", () => {
+        loaddata();
+      });
+      function savedata() {
+        localStorage.setItem("saves", JSON.stringify(saves));
+      }
+
+      function loaddata() {
+        let lastTasks = localStorage.getItem("saves");
+        if (!lastTasks) return;
+        saves = JSON.parse(lastTasks);
+        saves.forEach(addContent);
+      }
+      const cost = {
+        Subway: 11000,
+        BBQ: 18000,
+        Yeopddeok: 13000,
+        Maratang: 10000,
+        Domino: 16000,
+        Jajangmyeon: 6000,
+        Kimchi: 10000,
+      };
+      function addContent(save) {
+        let tbody;
+        let tr = document.createElement("tr");
+        let th = document.createElement("th");
+        let select = document.createElement("button");
+        select.type = "button";
+        select.className = "btn btn-light select";
+        select.style = "border: 1px solid";
+        select.textContent = "선택";
+        select.addEventListener("click", () => {
+          tr.remove();
+          alert("상대방의 번호는 " + save.phoneNum + "입니다.");
+          saves = saves.filter((t) => t !== save);
+          savedata(saves);
+        });
+        let td0 = document.createElement("td");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let present = new Date();
+        present = present.getHours() * 60 + present.getMinutes();
+        th.scope = "row";
+        td0.textContent = save.submitTime + save.time - present;
+        if (td0.textContent <= 0) {
+          tr.remove();
+          saves = saves.filter((t) => t !== save);
+          savedata(saves);
+        }
+        td2.textContent = save.location;
+        if (save.store === 0) {
+          let needed = cost.Subway - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#subway_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 1) {
+          let needed = cost.BBQ - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#bbq_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 2) {
+          let needed = cost.Yeopddeok - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#yeopddeok_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 3) {
+          let needed = cost.Maratang - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#maratang_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 4) {
+          let needed = cost.Domino - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#domino_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 5) {
+          let needed = cost.Jajangmyeon - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#jajangmyeon_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 6) {
+          let needed = cost.Kimchi - save.money;
+          if (needed <= 0) {
+            return;
+          }
+          tbody = document.querySelector("#kimchi_tbody");
+          td1.textContent = needed + "원";
+        }
+        if (save.store === 7) {
+          th.textContent = save.name;
+          tbody = document.querySelector("#etc_tbody");
+          td1.textContent = save.money + "원";
+        }
+        tr.appendChild(th);
+        tr.appendChild(td0);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        td3.appendChild(select);
+        tbody.appendChild(tr);
+      }
+
+      let submit = document.querySelector("#submit");
+      submit.addEventListener("click", () => {
+        (function () {
+          "use strict";
+
+          var forms = document.querySelectorAll(".needs-validation");
+
+          Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener(
+              "submit",
+              function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                form.classList.add("was-validated");
+
+                if (form.checkValidity()) {
+                  let store = document.querySelector("#ordered_store");
+                  let time = document.querySelector("#ordered_time");
+                  let money = document.querySelector("#ordered_money");
+                  let location = document.querySelector("#ordered_location");
+                  let phone = document.querySelector("#phoneNumber");
+                  let presentTime = new Date();
+                  presentTime =
+                    presentTime.getHours() * 60 + presentTime.getMinutes();
+                  let save;
+                  if (store.value === "써브웨이") {
+                    save = {
+                      store: type.Subway,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "BBQ") {
+                    save = {
+                      store: type.BBQ,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "엽기떡볶이") {
+                    save = {
+                      store: type.Yeopddeok,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "마라탕") {
+                    save = {
+                      store: type.Maratang,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "도미노피자") {
+                    save = {
+                      store: type.Domino,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "짜장면") {
+                    save = {
+                      store: type.Jajangmyeon,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "김치찌개") {
+                    save = {
+                      store: type.Kimchi,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  if (store.value === "기타") {
+                    let name = document.querySelector("#etc_write");
+                    if (name.value === "") {
+                      return;
+                    }
+
+                    save = {
+                      store: type.Etc,
+                      time: parseInt(time.value),
+                      money: money.value,
+                      location: location.value,
+                      submitTime: presentTime,
+                      name: name.value,
+                      phoneNum: phone.value,
+                    };
+                  }
+                  saves.push(save);
+                  savedata();
+                  addContent(save);
+                  store.value = "";
+                  time.value = "";
+                  money.value = "";
+                  location.value = "";
+                  phone.value = "";
+                  alert('정상적으로 등록되었습니다!');
+                }
+              },
+              false
+            );
+          });
+        })();
+      });
+
+      function myeong(xsaves) {
+        xsaves = xsaves.filter(
+          (t) =>
+            t.location !== "율전 인관" &&
+            t.location !== "율전 의관" &&
+            t.location !== "율전 예관" &&
+            t.location !== "율전 지관"
+        );
+        return xsaves;
+      }
+
+      function yul(xsaves) {
+        xsaves = xsaves.filter(
+          (t) =>
+            t.location === "율전 인관" ||
+            t.location === "율전 의관" ||
+            t.location === "율전 예관" ||
+            t.location === "율전 지관"
+        );
+        return xsaves;
+      }
+
+      document.querySelector("#stotal").addEventListener("click", () => {
+        let ssaves = saves.filter((t) => t.store === 0);
+        document.querySelector("#subway_tbody").innerHTML = "";
+        ssaves.forEach(addContent);
+      });
+      document.querySelector("#smyeong").addEventListener("click", () => {
+        let ssaves = saves.filter((t) => t.store === 0);
+        let smyeong = myeong(ssaves);
+        document.querySelector("#subway_tbody").innerHTML = "";
+        smyeong.forEach(addContent);
+      });
+      document.querySelector("#syul").addEventListener("click", () => {
+        let ssaves = saves.filter((t) => t.store === 0);
+        let syul = yul(ssaves);
+        document.querySelector("#subway_tbody").innerHTML = "";
+        syul.forEach(addContent);
+      });
+
+      document.querySelector("#btotal").addEventListener("click", () => {
+        let bsaves = saves.filter((t) => t.store === 1);
+        document.querySelector("#bbq_tbody").innerHTML = "";
+        bsaves.forEach(addContent);
+      });
+      document.querySelector("#bmyeong").addEventListener("click", () => {
+        let bsaves = saves.filter((t) => t.store === 1);
+        let bmyeong = myeong(bsaves);
+        document.querySelector("#bbq_tbody").innerHTML = "";
+        bmyeong.forEach(addContent);
+      });
+      document.querySelector("#byul").addEventListener("click", () => {
+        let bsaves = saves.filter((t) => t.store === 1);
+        let byul = yul(bsaves);
+        document.querySelector("#bbq_tbody").innerHTML = "";
+        byul.forEach(addContent);
+      });
+
+      document.querySelector("#ytotal").addEventListener("click", () => {
+        let ysaves = saves.filter((t) => t.store === 2);
+        document.querySelector("#yeopddeok_tbody").innerHTML = "";
+        ysaves.forEach(addContent);
+      });
+      document.querySelector("#ymyeong").addEventListener("click", () => {
+        let ysaves = saves.filter((t) => t.store === 2);
+        let ymyeong = myeong(ysaves);
+        document.querySelector("#yeopddeok_tbody").innerHTML = "";
+        ymyeong.forEach(addContent);
+      });
+      document.querySelector("#yyul").addEventListener("click", () => {
+        let ysaves = saves.filter((t) => t.store === 2);
+        let yyul = yul(ysaves);
+        document.querySelector("#yeopddeok_tbody").innerHTML = "";
+        yyul.forEach(addContent);
+      });
+
+      document.querySelector("#mtotal").addEventListener("click", () => {
+        let msaves = saves.filter((t) => t.store === 3);
+        document.querySelector("#maratang_tbody").innerHTML = "";
+        msaves.forEach(addContent);
+      });
+      document.querySelector("#mmyeong").addEventListener("click", () => {
+        let msaves = saves.filter((t) => t.store === 3);
+        let mmyeong = myeong(msaves);
+        document.querySelector("#maratang_tbody").innerHTML = "";
+        mmyeong.forEach(addContent);
+      });
+      document.querySelector("#myul").addEventListener("click", () => {
+        let msaves = saves.filter((t) => t.store === 3);
+        let myul = yul(msaves);
+        document.querySelector("#maratang_tbody").innerHTML = "";
+        myul.forEach(addContent);
+      });
+
+      document.querySelector("#dtotal").addEventListener("click", () => {
+        let dsaves = saves.filter((t) => t.store === 4);
+        document.querySelector("#domino_tbody").innerHTML = "";
+        dsaves.forEach(addContent);
+      });
+      document.querySelector("#dmyeong").addEventListener("click", () => {
+        let dsaves = saves.filter((t) => t.store === 4);
+        let dmyeong = myeong(dsaves);
+        document.querySelector("#domino_tbody").innerHTML = "";
+        dmyeong.forEach(addContent);
+      });
+      document.querySelector("#dyul").addEventListener("click", () => {
+        let dsaves = saves.filter((t) => t.store === 4);
+        let dyul = yul(dsaves);
+        document.querySelector("#domino_tbody").innerHTML = "";
+        dyul.forEach(addContent);
+      });
+
+      document.querySelector("#jtotal").addEventListener("click", () => {
+        let jsaves = saves.filter((t) => t.store === 5);
+        document.querySelector("#jajangmyeon_tbody").innerHTML = "";
+        jsaves.forEach(addContent);
+      });
+      document.querySelector("#jmyeong").addEventListener("click", () => {
+        let jsaves = saves.filter((t) => t.store === 5);
+        let jmyeong = myeong(jsaves);
+        document.querySelector("#jajangmyeon_tbody").innerHTML = "";
+        jmyeong.forEach(addContent);
+      });
+      document.querySelector("#jyul").addEventListener("click", () => {
+        let jsaves = saves.filter((t) => t.store === 5);
+        let jyul = yul(jsaves);
+        document.querySelector("#jajangmyeon_tbody").innerHTML = "";
+        jyul.forEach(addContent);
+      });
+
+      document.querySelector("#ktotal").addEventListener("click", () => {
+        let ksaves = saves.filter((t) => t.store === 6);
+        document.querySelector("#kimchi_tbody").innerHTML = "";
+        ksaves.forEach(addContent);
+      });
+      document.querySelector("#kmyeong").addEventListener("click", () => {
+        let ksaves = saves.filter((t) => t.store === 6);
+        let kmyeong = myeong(ksaves);
+        document.querySelector("#kimchi_tbody").innerHTML = "";
+        kmyeong.forEach(addContent);
+      });
+      document.querySelector("#kyul").addEventListener("click", () => {
+        let ksaves = saves.filter((t) => t.store === 6);
+        let kyul = yul(ksaves);
+        document.querySelector("#kimchi_tbody").innerHTML = "";
+        kyul.forEach(addContent);
+      });
+
+      document.querySelector("#etotal").addEventListener("click", () => {
+        let esaves = saves.filter((t) => t.store === 7);
+        document.querySelector("#etc_tbody").innerHTML = "";
+        esaves.forEach(addContent);
+      });
+      document.querySelector("#emyeong").addEventListener("click", () => {
+        let esaves = saves.filter((t) => t.store === 7);
+        let emyeong = myeong(esaves);
+        document.querySelector("#etc_tbody").innerHTML = "";
+        emyeong.forEach(addContent);
+      });
+      document.querySelector("#eyul").addEventListener("click", () => {
+        let esaves = saves.filter((t) => t.store === 7);
+        let eyul = yul(esaves);
+        document.querySelector("#etc_tbody").innerHTML = "";
+        eyul.forEach(addContent);
+      });
+      function selectStore() {
+        let autoPlaceholder = document.querySelector("#ordered_store");
+        switch (autoPlaceholder.value) {
+          case "써브웨이":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Subway;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "BBQ":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.BBQ;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "엽기떡볶이":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Yeopddeok;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "마라탕":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Maratang;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "도미노피자":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Domino;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "짜장면":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Jajangmyeon;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "김치찌개":
+            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Kimchi;
+            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            break;
+          case "기타":
+            document.querySelector("#ordered_money").placeholder = "금액";
+            document.querySelector("#etc_write").placeholder = "주문하고자 하는 가게 명을 적어주세요!";
+            break;
+        }
+      }
+>>>>>>> sh
     </script>
   </body>
 </html>
