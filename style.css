@@ -1,5 +1,6 @@
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 100;
 }
 .title {
   background-color: #FFC0CB;
@@ -52,24 +53,13 @@ body {
 .submit {
   width: 200px;
 }
+.collapse {
+  margin-bottom:5%;
+}
 img {
   height:150px;
   overflow: hidden;
 }
 h3 {
   margin-left: 30px;
-}
-#total {
-  padding:4pt 10pt;
-  margin-bottom:5px;
-}
-#myeong {
-  padding:4pt 10pt;
-  background-color: #FFC0CB;
-  margin-bottom:5px;
-}
-#yul {
-  padding:4pt 10pt;
-  background-color: #D2F3F8;
-  margin-bottom:5px;
 }
