@@ -135,279 +135,465 @@
         </div>
       </div>
     </div>
-    <br>
+    <br />
     <div class="container">
-    <button
-      type="button"
-      class="btn btn-success write"
-      data-bs-toggle="collapse"
-      href="#writing"
-      role="button"
-      aria-expanded="false"
-      aria-controls="writing"
-      style="margin-left:83%; margin-right:10px;"
-    >
-      글쓰기 <i class="bi bi-pencil"></i>
-    </button>
-    <button type="button" class="btn btn-light" style="margin-left:0;">
-      내 글 <i class="bi bi-card-text"></i>
-    </button>
-  </div>
-  
+      <button
+        type="button"
+        class="btn btn-success write"
+        data-bs-toggle="collapse"
+        href="#writing"
+        role="button"
+        aria-expanded="false"
+        aria-controls="writing"
+        style="margin-left: 83%; margin-right: 10px"
+      >
+        글쓰기 <i class="bi bi-pencil"></i>
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        onclick="location.href = 'help.html'"
+        style="margin-left: 0"
+      >
+        도움말 <i class="bi bi-card-text"></i>
+      </button>
+    </div>
+
     <!-- 게시글 -->
-    <br><br>
+    <br /><br />
     <div class="container">
-    <div class="collapse" id="subway">
-      <div>
-        <h3>써브웨이(최소주문금액: 11000원)</h3>
+      <div class="collapse" id="subway">
+        <div>
+          <h3>써브웨이(최소주문금액: 11000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="stotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="smyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="syul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="subway_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="stotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="smyeong"  style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="syul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="subway_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="bbq">
+        <div>
+          <h3>BBQ(최소주문금액: 18000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="btotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="bmyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="byul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="bbq">
-      <div>
-        <h3>BBQ(최소주문금액: 18000원)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="bbq_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="btotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="bmyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="byul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="bbq_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="yeopddeok">
+        <div>
+          <h3>엽기떡볶이(최소주문금액: 13000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="ytotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="ymyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="yyul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="yeopddeok">
-      <div>
-        <h3>엽기떡볶이(최소주문금액: 13000원)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="yeopddeok_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="ytotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="ymyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="yyul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="yeopddeok_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="maratang">
+        <div>
+          <h3>마라탕(최소주문금액: 10000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="mtotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="mmyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="myul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="maratang">
-      <div>
-        <h3>마라탕(최소주문금액: 10000원)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="maratang_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="mtotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="mmyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="myul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
-      
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="maratang_tbody"></tbody>
-      </table>
-    </div>
 
-    <div class="collapse" id="domino">
-      <div>
-        <h3>도미노피자(최소주문금액: 16000원)</h3>
+      <div class="collapse" id="domino">
+        <div>
+          <h3>도미노피자(최소주문금액: 16000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="dtotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="dmyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="dyul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="domino_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="dtotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="dmyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="dyul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="domino_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="jajangmyeon">
+        <div>
+          <h3>짜장면(최소주문금액: 6000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="jtotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="jmyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="jyul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="jajangmyeon">
-      <div>
-        <h3>짜장면(최소주문금액: 6000원)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="jajangmyeon_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="jtotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="jmyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="jyul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="jajangmyeon_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="kimchi">
+        <div>
+          <h3>김치찌개(최소주문금액: 10000원)</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="ktotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="kmyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="kyul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="kimchi">
-      <div>
-        <h3>김치찌개(최소주문금액: 10000원)</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">필요금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="kimchi_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="ktotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;">
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="kmyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="kyul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">필요금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="kimchi_tbody"></tbody>
-      </table>
-    </div>
+      <div class="collapse" id="etc">
+        <div>
+          <h3>기타</h3>
+        </div>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="etotal"
+          style="padding: 4pt 10pt; margin-bottom: 5px; border: solid 1pt"
+        >
+          전체
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="emyeong"
+          style="
+            padding: 4pt 10pt;
+            background-color: #ffc0cb;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          명륜
+        </button>
+        <button
+          type="button"
+          class="btn btn-light select"
+          id="eyul"
+          style="
+            padding: 4pt 10pt;
+            background-color: #d2f3f8;
+            margin-bottom: 5px;
+            border: solid 1pt;
+          "
+        >
+          율전
+        </button>
 
-    <div class="collapse" id="etc">
-      <div>
-        <h3>기타</h3>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">가게</th>
+              <th scope="col">남은시간</th>
+              <th scope="col">주문금액</th>
+              <th scope="col">수령장소</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="etc_tbody"></tbody>
+        </table>
       </div>
-      <button type="button" class="btn btn-light select" id="etotal" style="padding:4pt 10pt;
-      margin-bottom:5px; border: solid 1pt;"> 
-        전체
-      </button>
-      <button type="button" class="btn btn-light select" id="emyeong" style="padding:4pt 10pt;
-      background-color: #FFC0CB;
-      margin-bottom:5px; border: solid 1pt;">
-        명륜
-      </button>
-      <button type="button" class="btn btn-light select" id="eyul" style="padding:4pt 10pt;
-      background-color: #D2F3F8;
-      margin-bottom:5px; border: solid 1pt;">율전</button>
-
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">가게</th>
-            <th scope="col">남은시간</th>
-            <th scope="col">주문금액</th>
-            <th scope="col">수령장소</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="etc_tbody"></tbody>
-      </table>
     </div>
-  </div>
 
     <!-- 글쓰기 -->
-    <form class="row g-3 needs-validation collapse" id="writing" novalidate style="width:100%">
+    <form
+      class="row g-3 needs-validation collapse"
+      id="writing"
+      novalidate
+      style="width: 100%"
+    >
       <div class="col-12 m-4"></div>
       <div class="col-md-1"></div>
       <div class="col-md-3">
@@ -478,9 +664,7 @@
         <div class="invalid-feedback">주문 장소를 선택하세요.</div>
       </div>
       <div class="col-md-7">
-        <label for="validationCustomUsername" class="form-label"
-          >비고</label
-        >
+        <label for="validationCustomUsername" class="form-label">비고</label>
         <div class="input-group">
           <input
             type="text"
@@ -494,9 +678,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-1"></div>
       <div class="col-md-6">
-        <label for="phoneNumber" class="form-label"
-          >전화번호</label
-        >
+        <label for="phoneNumber" class="form-label">전화번호</label>
         <div class="input-group has-validation">
           <input
             type="number"
@@ -587,11 +769,12 @@
         let select = document.createElement("button");
         select.type = "button";
         select.className = "btn btn-light select";
-        select.style = "border: 1px solid;height:25px;padding-top:0; margin-top:-5;";
+        select.style =
+          "border: 1px solid;height:25px;padding-top:0; margin-top:-5;";
         select.textContent = "선택";
         select.addEventListener("click", () => {
           tr.remove();
-          alert("상대방의 번호는 " + save.phoneNum + "입니다.");
+          alert("상대방이 남긴 말\n" + save.furtherInfo + "\n" + "상대방의 번호는 " + save.phoneNum + "입니다.");
           saves = saves.filter((t) => t !== save);
           savedata(saves);
         });
@@ -700,10 +883,12 @@
                   let money = document.querySelector("#ordered_money");
                   let location = document.querySelector("#ordered_location");
                   let phone = document.querySelector("#phoneNumber");
+                  let etc = document.querySelector("#etc_write");
                   let presentTime = new Date();
                   presentTime =
                     presentTime.getHours() * 60 + presentTime.getMinutes();
                   let save;
+
                   if (store.value === "써브웨이") {
                     save = {
                       store: type.Subway,
@@ -712,6 +897,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "BBQ") {
@@ -722,6 +908,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "엽기떡볶이") {
@@ -732,6 +919,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "마라탕") {
@@ -742,6 +930,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "도미노피자") {
@@ -752,6 +941,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "짜장면") {
@@ -762,6 +952,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "김치찌개") {
@@ -772,6 +963,7 @@
                       location: location.value,
                       submitTime: presentTime,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   if (store.value === "기타") {
@@ -788,6 +980,7 @@
                       submitTime: presentTime,
                       name: name.value,
                       phoneNum: phone.value,
+                      furtherInfo: etc.value,
                     };
                   }
                   saves.push(save);
@@ -798,7 +991,11 @@
                   money.value = "";
                   location.value = "";
                   phone.value = "";
-                  alert('정상적으로 등록되었습니다!');
+                  etc.value = "";
+                  document.querySelector("#invalidCheck").checked = false;
+                  alert("정상적으로 등록되었습니다!");
+                  let a = document.querySelector("#writing");
+                  a.className = "row g-3 needs-validation collapse";
                 }
               },
               false
@@ -976,39 +1173,55 @@
         let autoPlaceholder = document.querySelector("#ordered_store");
         switch (autoPlaceholder.value) {
           case "써브웨이":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Subway;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Subway;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "BBQ":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.BBQ;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.BBQ;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "엽기떡볶이":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Yeopddeok;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Yeopddeok;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "마라탕":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Maratang;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Maratang;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "도미노피자":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Domino;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Domino;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "짜장면":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Jajangmyeon;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Jajangmyeon;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "김치찌개":
-            document.querySelector("#ordered_money").placeholder = "최대 금액 : " + cost.Kimchi;
-            document.querySelector("#etc_write").placeholder = "하고 싶은 말을 적어주세요!";
+            document.querySelector("#ordered_money").placeholder =
+              "최대 금액 : " + cost.Kimchi;
+            document.querySelector("#etc_write").placeholder =
+              "하고 싶은 말을 적어주세요!";
             break;
           case "기타":
             document.querySelector("#ordered_money").placeholder = "금액";
-            document.querySelector("#etc_write").placeholder = "주문하고자 하는 가게 명을 적어주세요!";
+            document.querySelector("#etc_write").placeholder =
+              "주문하고자 하는 가게 명을 적어주세요!";
             break;
         }
       }
+      
     </script>
   </body>
 </html>

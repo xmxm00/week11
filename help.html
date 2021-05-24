@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>With Me</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        ul{
+            list-style-type: square;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <a href="index.html" style="text-decoration: none; color: black"
+        >With Me</a
+      >
+    </div>
+    <div class="subtitle">최소 배달비를 위한 배달 매칭 플랫폼</div>
+    <div class="container">
+          <p><h4 style="width: fit-content;">안녕하세요! 최소 배달비를 위한 배달 매칭 플랫폼, <span style="font-weight: bold;">With Me</span> 이용 방법을 안내해드리겠습니다.</h3></p>
+          <ul style="width: fit-content;">
+              <li><h3>메인 화면</h3></li>
+              <img src="index.PNG">
+              <p>
+                  메인화면은 다음과 같이 구성되어 있습니다. 가운데 여러 음식점중 원하는 음식점을 <span style="font-weight: bold;">클릭</span>하면 해당 음식점 게시판이 아래에 나타나게 됩니다.
+                  만약 새롭게 모집 글을 작성하고자 한다면 하단의 <span style="font-weight: bold;">글쓰기 버튼</span>을 눌러 정보를 입력하고 제출하면 게시판에 글이 나타나게 됩니다.
+              </p>
+              <li><h3>게시판</h3></li>
+              <img src="board.PNG">
+              <p>
+                  원하는 음식점을 클릭하게되면 하단에 게시판이 보여집니다. 음식점별 최소 주문금액을 바탕으로 필요한 추가금을 계산한 필요금액칸과, 수령하는 위치를 확인하여 원하는 게시글을
+                  선택하면 됩니다. 선택하게되면 브라우저에서 상대방이 남긴 말(비고)과 전화번호를 통해 연락을 취하시면 됩니다. 명륜과 율전 캠퍼스가 나뉘어 있으므로, 명륜 / 율전 버튼을 이용해
+                  해당 캠퍼스의 게시글만 모아서 볼 수 있습니다.
+              </p>
+              <li><h3>글쓰기</h3></li>
+              <img src="write.PNG">
+              <p>
+                  글쓰기 버튼을 누르면 위와 같은 양식이 아래에 나오게됩니다. 양식에 맞게 음식점을 선택하고, 몇분 후에 주문할 예정인지를 숫자로 적고, 자신이 주문하고자 하는 음식의 금액을 
+                  입력하고, 장소와 비고란을 작성하시고, 전화번호를 입력하시면됩니다. 제출을 하고나면 해당 게시판에서 방금 작성한 정보가 나타나게 됩니다.
+              </p>
+          </ul>
+          <div class="d-flex flex-row-reverse">
+            <button
+            type="button"
+            class="btn btn-light"
+            onclick="location.href = 'index.html'"
+            style="margin-left: 10px"
+            >
+                메인으로 
+                <i class="bi bi-card-text"></i>
+            </button>
+            <button
+            type="button"
+            class="btn btn-primary"
+            onclick="location.href = 'help.html'"
+            style="margin-left: 10px"
+            >
+                맨 위로 
+                <i class="bi bi-arrow-up-circle"></i>
+            </button>
+          </div>
+          <br>
+    </div>
+  </body>
+</html>
