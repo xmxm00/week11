@@ -3,7 +3,6 @@
 ## **Screenshot**
 
 <img src="capture.PNG">
-<br>
 
 ## **Link**
 https://youtu.be/zdzSjZxXwCo
