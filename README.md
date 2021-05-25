@@ -3,14 +3,17 @@
 ## **Screenshot**
 
 <img src="capture.PNG">
+<br>
 
 ## **Link**
+https://youtu.be/zdzSjZxXwCo
+<br>
 
 ## **Description**
 
-Matching platform for minimum delivery cost...
-### Installation insructions
-### How to use
+최소 배달비를 위한 배달 매칭 플랫폼
+### - Installation insructions
+### - How to use
 <p>
 사용자는 자신이 가게와 주문할 시간, 배달하고자 하는 금액과 주문 장소를 폼을 이용하여 작성할 수 있습니다.<br>
 이 웹사이트는 성균관대학교 양캠퍼스 학생을 대상으로 하고 있기 때문에 명륜과 율전캠퍼스 주변의 장소 중 수령 장소를 선택 가능합니다.<br>
@@ -18,3 +21,8 @@ Matching platform for minimum delivery cost...
 글 목록 중 자신이 원하는 사람의 글을 선택하면 알림창에 상대방의 전화 번호가 보여지게 됩니다.<br>
 만약 웹사이트에 자신이 주문하고자 하는 식당이 존재하지 않는다면, 기타 옵션을 선택하여 원하는 식당을 직접 입력할 수 있습니다.<br>
 </p>
+
+### - Examples
+<p> 예를 들어, 명륜 정문 근처에 거주하는 사용자가 30분 뒤 써브웨이를 6500원 가량 주문할 예정이라면, 글쓰기 기능을 통해서 이러한 정보들을 등록할 수 있습니다.<br>
+명륜 정문 근처에서 배달은 시키고 싶어하는 또 다른 사용자는 글 목록에서 이 글을 확인할 수 있습니다.<br>
+만약 자신이 원하는 시간과 금액이 적절하다면, 이 글을 선택하여 글쓴이의 전화번호를 얻을 수 있습니다.<br>
