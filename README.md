@@ -13,8 +13,8 @@
 최소 배달비를 위한 배달 매칭 플랫폼
 ### - Intallation intructions
 <p>새롭게 설치할 파일은 존재하지 않습니다.<br>
- <br>
-[이 주소](https://xmxm00.github.io/week11)로 접속하면 웹페이지를 이용할 수 있습니다.
+https://xmxm00.github.io/week11 <br>
+위 주소로 접속하면 웹페이지를 이용할 수 있습니다.
 </p>
 
 ### - How to use
